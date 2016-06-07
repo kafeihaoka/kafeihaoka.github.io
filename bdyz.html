@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.blue{color:blue;}
+		.red{color:red;}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="txt">
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script>
+		$("#txt").blur(function(){
+			var val=$(this).val();
+			var reg=/^[a-zA-Z0-9]{6,9}\@qq\.com$/;
+			var result=reg.test(val);
+			if(result){
+				$("span").remove()
+				var span=$("<span></span>");
+				span.addClass(".blue");
+				span.text("输入正确")
+				$("body").append(span)
+			}else{
+				$("span").remove()
+				var span=$("<span></span>");
+				span.addClass(".red");
+				span.text("请输入正确的格式")
+				$("body").append(span)
+			}
+		})
+		
+	</script>
+</body>
+</html>
+
+
+			<!-- 二维数组
+			计算器
+			抽奖
+			图片自动轮播
+			表单验证
+			电子钟 -->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0}
+	ul{width: 216px;height: 40px;margin-bottom:2px}
+		ul li{list-style:none;width:50px;float:left;padding:10px;border:1px solid #ccc;height: 20px;}
+		#box{width: 500px;height: 500px;border:1px solid #ccc;overflow:hidden;}
+		.content{width: 500px;height: 500px;}
+		.content1{background-color: #f0f;display:block}
+		.content2{background-color: #ff0;display:none}
+		.content3{background-color: #0f0;display:none}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>游戏</li>
+		<li>视频</li>
+		<li>动画</li>
+	</ul>
+	<div id="box">
+		<div class="content content1">游戏</div>
+		<div class="content content2">视频</div>
+		<div class="content content3">动画</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("ul li").click(function(){
+			var ind=$(this).index();
+			console.log(ind)
+			$("#box .content").eq(ind).css("display","block").siblings().css("display","none");
+			// $("#box div").eq(ind).show().siblings().hide();
+		})
+	</script>
+</body>
+</html>

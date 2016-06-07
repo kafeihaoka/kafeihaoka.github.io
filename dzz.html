@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span id="hours"></span>:
+	<span id="minutes"></span>:
+	<span id="seconds"></span>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script>
+		function settime(){
+			var date=new Date();
+			var hours=date.getHours();
+			var minutes=date.getMinutes();
+			var seconds=date.getSeconds();
+			$("#hours").text(hours);
+			$("#minutes").text(minutes);
+			$("#seconds").text(seconds)
+		}
+
+		setInterval(settime,1000)
+
+	</script>
+</body>
+</html>

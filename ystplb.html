@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	.btn{height: 20px;width: 20px;border:1px solid #f0f;line-height:20px;text-align:center;cursor:pointer;list-style:none;float:left;}
+	.active{background-color:#ff0;}
+	</style>
+</head>
+<body>
+	<div><img id="oimg" src="images/1.jpg" alt=""></div>
+	<ul>
+		<li class="btn">1</li>
+		<li class="btn">2</li>
+		<li class="btn">3</li>
+		<li class="btn">4</li>
+	</ul>
+	<script>
+		var abtn=document.getElementsByClassName("btn");
+		var imgarr=["images/1.jpg","images/2.jpg","images/3.jpg","images/7.jpg"]
+		var aimg=document.getElementById("oimg");
+		for(var i=0;i<abtn.length;i++){
+			abtn[i].onclick=function(){
+			var ind=index(this);
+			aimg.src=imgarr[ind];
+			addClass(this,"active")
+			var arr=sibings(this);
+				for(j=0;j<arr.length;j++){
+				removeClass(arr[j],"active")
+				}
+			}
+		}
+		
+		function index(element){
+			var eleparent=element.parentNode;
+			var elechild=eleparent.children;
+			for(var i=0;i<elechild.length;i++){
+				if(element==elechild[i]){
+				return i;
+				}
+			}
+		}
+
+		function addClass(element,str){
+		element.className=element.className+" "+str
+		}
+
+		
+		function sibings(element){
+			var newarr=[];
+			var eleparent=element.parentNode;
+			var elechild=eleparent.children;
+			for(var i=0;i<elechild.length;i++){
+			if(element!=elechild[i]){
+				newarr.push(elechild[i])
+				}
+			}
+			return newarr;
+		}
+
+		function removeClass(element,str){
+			var newarr=[];
+			var arr = element.className.split(" ");
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]!=str){
+					newarr.push(arr[i]);
+				}
+			}
+			var newname=newarr.join(" ");
+			element.className=newname
+		}
+		
+	</script>
+</body>
+</html>

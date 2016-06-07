@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn">
+	<ul id="wb">
+		<li>pingg <span class="shanchu">删除</span></li>
+		<li>xiangh<span class="shanchu">删除</span></li>
+		<li>yali<span class="shanchu">删除</span></li>
+		<li>mihout<span class="shanchu">删除</span></li>
+	</ul>
+	<script>
+		var otxt= document.getElementById("txt");
+		var obtn= document.getElementById("btn");
+		var oul= document.getElementById("wb")
+		
+		
+		obtn.onclick=function(){
+			var val=otxt.value;
+			var Otext=document.createTextNode(val);
+			var oli= document.createElement("li");
+			oli.appendChild(Otext);
+			oul.appendChild(oli);
+		}
+		var clear=document.getElementsByClassName("shanchu");
+		for(i=0;i<clear.length;i++){
+			clear[i].onclick=function(){
+			oul.removeChild(this.parentNode);
+
+		}
+
+		}
+			</script>
+</body>
+</html>

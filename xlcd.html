@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0}
+		a{display:block;padding:10px 10px;border:1px solid #f1f1f1;text-decoration:none;width: 70px;color:#fff;background-color:#ccc;text-align:center}
+		ul{display:none}
+		ul li{padding:10px 10px;list-style:none;border:1px solid #ccc;width: 100px;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<a href="#">饮品</a>
+	<ul>
+		<li>蜂蜜柚子茶</li>
+		<li>冰糖雪梨</li>
+		<li>酸梅汁</li>
+		<li>水蜜桃</li>
+	</ul>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script>
+		$(".box").mouseenter(function(){
+			$("ul").show(500)
+		})
+		$(".box").mouseleave(function(){
+			$("ul").hide(500)
+		})
+	</script>
+</body>
+</html>

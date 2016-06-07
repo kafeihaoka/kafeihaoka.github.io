@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding: 0;}
+		.header{height: 300px;background-color: 666}
+		.banner{height: 700px;background-color: #eee}
+		.container{height: 700px;background-color:#999}
+		.footer{height: 300px;background-color: #eee}
+		.list{position:fixed;top:0;}
+		.list li{list-style: none;height: 30px;width: 70px;float:left;border: 1px solid #999;text-align: center;line-height:30px}
+		.btn{position:fixed;bottom:20px;right:20px;height: 50px;width: 50px;background-color:#999;display: none;}
+		.box{height: 330px;width: 360px;background-color: #fff;margin:0 auto;}
+		
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="box">
+			<ul class="list">
+			<li>主页</li>
+			<li class="xheader">电影</li>
+			<li class="xbanner">动漫</li>
+			<li class="xcontainer">连续剧</li>
+			<li class="xfooter">关于我们</li>
+		</ul>
+		</div>
+	</div>
+	<div class="banner"><div class="btn">向上</div></div>
+	<div class="container"></div>
+	
+	<div class="footer"></div>
+	
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script>
+		$(window).scroll(function(){
+			var scrt=$(window).scrollTop()
+			if(scrt>50){
+				$(".btn").css("display","block")
+				// css属性比show省资源
+			}else{
+				$(".btn").css("display","none")
+			}
+		})
+		$(".btn").click(function(){
+			
+			$("html,body").animate({"scrollTop":0},5000)
+			// 兼容问题，加个html可解决
+		})
+
+
+
+		$(".xheader").click(function(){
+			$("html,body").animate({"scrollTop":$(".header").offset().top},5000)
+		})
+		$(".xbanner").click(function(){
+			$("html,body").animate({"scrollTop":$(".banner").offset().top},5000)
+		})
+		$(".xcontainer").click(function(){
+			$("html,body").animate({"scrollTop":$(".container").offset().top},5000)
+		})
+		$(".xfooter").click(function(){
+			$("html,body").animate({"scrollTop":$(".footer").offset().top},5000)
+		})
+		// 让界面滚动到相应的位置
+	</script>
+</body>
+</html>

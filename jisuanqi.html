@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+
+	<input type="button" value="0" class="num">
+	<input type="button" value="1" class="num">
+	<input type="button" value="2" class="num">
+	<input type="button" value="3" class="num">
+	<input type="button" value="4" class="num">
+	<input type="button" value="5" class="num">
+	<input type="button" value="6" class="num">
+	<input type="button" value="7" class="num">
+	<input type="button" value="8" class="num">
+	<input type="button" value="9" class="num">
+
+	<input type="button" value="+" class="sign">
+	<input type="button" value="-" class="sign">
+	<input type="button" value="*" class="sign">
+	<input type="button" value="/" class="sign">
+
+	<input type="button" value="c" id="clear">
+
+	<input type="button" value="计算" id="result">
+
+	<script>
+		var otxt=document.getElementById("txt")
+		var onum=document.getElementsByClassName("num");
+		var osign=document.getElementsByClassName("sign");
+		var oresult=document.getElementById("result");
+		var oclear=document.getElementById("clear");
+
+		var num1="";
+		var num2="";
+		var sign="";
+		var result=0;
+
+		for(var i=0;i<onum.length;i++){
+			onum[i].onclick=function(){
+				if(sign==""){
+					 num1+=this.value;
+					 otxt.value=num1
+				}else{
+					 num2+=this.value;
+					 otxt.value=num2
+				}
+			}
+		}
+		for(var i=0;i<osign.length;i++){
+			osign[i].onclick=function(){
+				 sign=this.value
+			}
+		}
+		oresult.onclick=function(){
+			var	Num1=Number(num1);
+			var Num2=Number(num2);
+			switch(sign){
+			
+				case "+":result=Num1+Num2;break;
+				case "-":result=Num1-Num2;break;
+				case "*":result=Num1*Num2;break;
+				case "/":result=Num1/Num2;break;
+			}
+			 otxt.value=result
+		}
+		oclear.onclick=function(){
+			num1="";
+			num2="";
+			sign="";
+			result=0;
+			otxt.value="";
+		}
+	</script>
+</body>
+</html>

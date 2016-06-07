@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="抽奖" class="btn">
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script>
+		$(".btn").click(function(){
+			getName()
+		})
+		var nameList =["德玛","寒冰","流浪","皇子","赵信","剑姬","剑圣","ez","瑞文","光辉"];
+		var length=nameList.length;
+		var obj ={};
+		function getName(){
+			var num =Math.floor(Math.random()*length);
+			if(obj[nameList[num]]==undefined){
+				obj[nameList[num]]=1;
+		// 给对象的属性赋值为1
+				$("body").append(nameList[num])
+			}else{
+				getName();
+				// 递归函数
+//////////////////////////////////////////
+			}
+		}
+		// 建立新数组
+
+		// function getName(){
+		// 	var num =Math.floor(Math.random()*length);
+		// 	if(nameList[num]==null){
+		// 		getName
+		// 	}else{
+		// 		console.log(nameList[num]);
+		// 		nameList[num]=null
+		// 	}
+		// }
+		// 新方法：把原数组内容变成空的
+/////////////////////////////////////////////
+		// var newlist=[];
+		// function getName(){
+		// 	var num =Math.floor(Math.random()*length);
+		// 	if(newlist.length==0){
+		// 		newlist.push(nameList[num]);
+		// 		console.log(nameList[num])
+		// 	}else{
+		// 		for(i=0;i<newlist.length;i++){
+		// 			if(newlist[i]==nameList[num]){
+		// 				getName;
+		// 				return
+		// 				// 跳出else
+		// 			}
+		// 		}
+		// 		newlist.push(nameList[num]);
+		// 		console.log(nameList[num])
+		// 	}
+		// }
+		// 用for循环做
+///////////////////////////////
+		// for in 语句
+		// var obj={name:"an",
+		// 		age:18,
+		// 		born:"shuanggou",
+		// 		sex:"boy",
+		// 		favoration:"game"
+		// }
+		// for(var i in obj){
+		// 	console.log(obj[i]);
+		// }
+
+
+		
+		
+		// function Newarr(arr){
+		// 	var obj ={};
+		// var newarr=[];
+		// 	for(var i=0;i<arr.length;i++){
+		// 		if(obj[arr[i]]==undefined){
+		// 		obj[arr[i]]=1;
+		// 		newarr.push(arr[i])
+		// 	}
+		// 	}
+		// 	return newarr
+		// }
+		// 	var arr1=[1,2,3,4,5,1,2,2,3,5];
+		// 	var x= Newarr(arr1);
+		// 	console.log(x)
+			// 去除重复
+			
+/////////////////////////////
+		// var num=10;
+		// var obj={
+		// 		name:"an",
+		// 		num:20,
+		// 		age:function(){
+		// 			return(function(){
+		// 				return this.num
+		// 			})()
+		// 		}
+		// }
+		// console.log(obj.age())
+		// 立即执行函数   return返回的this是window对象
+	</script>
+</body>
+</html>
